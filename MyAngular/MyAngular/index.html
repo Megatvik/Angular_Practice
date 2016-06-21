@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="app">
+<head>
+    <title></title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/main.js"></script>
+</head>
+<body ng-controller="Main as vm">
+
+    <input type="text" ng-model="vm.text" placeholder="Enter text" />
+
+    <p>{{vm.text}}</p>
+
+
+    <div ng-controller="GetAll as ga">
+        <p>{{ga.message}}</p>
+        <ul>
+            <li ng-repeat="item in ga.data">
+                {{item.Id}} + {{item.SomeString}}  + {{item.SomeValue}}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
