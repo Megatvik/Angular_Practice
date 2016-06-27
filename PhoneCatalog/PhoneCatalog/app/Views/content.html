@@ -1,0 +1,29 @@
+﻿
+
+<div style="text-align:center; margin-left:20%; margin-right:20%; padding:20px; border-top:5px solid;"> <!--ng-controller="PhoneController as phone">-->
+
+    <p>{{phone.message}}</p>
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Release Year</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr align="center" ng-repeat="item in phone.data">
+                <td>{{item.Id}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.Brand}}</td>
+                <td>{{item.ReleaseYear}}</td>
+                <td>
+                    <button>Edit</button>
+                    <button ng-click="phone.delete(item)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

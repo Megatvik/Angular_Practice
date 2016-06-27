@@ -1,0 +1,27 @@
+﻿
+<div style="text-align:center; padding:20px; border-top:5px solid;" ng-controller="Main as vm">
+    <input style="text-align:center;" type="text" ng-model="vm.text" placeholder="Enter text" />
+
+    <p>{{vm.text}}</p>
+
+    <div style="display:inline-block;">
+        <div style="display:inline;">
+            <label>Name</label>
+            <input ng-model="currentItem.Name" />
+        </div>
+
+        <div style="display:inline;">
+            <label>Brand</label>
+            <input ng-model="currentItem.Brand" />
+        </div>
+
+        <div style="display:inline;">
+            <label>Release</label>
+            <input ng-model="currentItem.ReleaseYear" />
+        </div>
+        <div style="display:inline;">
+            <button ng-click="phone.create(currentItem)">Save</button>
+        </div>
+    </div>
+
+</div>
