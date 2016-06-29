@@ -1,5 +1,4 @@
-﻿
-angular
+﻿angular
     .module('app')
     .service('PhoneService', PhoneService);
 

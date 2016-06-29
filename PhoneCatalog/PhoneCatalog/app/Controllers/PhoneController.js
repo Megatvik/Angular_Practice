@@ -6,6 +6,10 @@ angular
 
 function phoneController(PhoneService) {
     var vm = this;
+    vm.sortType = 'Name';
+    vm.sortReverse = false;
+    vm.searshName = '';
+    vm.showAddForm = false;
 
     vm.Get = function () {
         PhoneService.GetPhones().then(function (data) { vm.data = data });

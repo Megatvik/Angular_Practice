@@ -129,7 +129,6 @@
   <ItemGroup>
     <Content Include="app\app.module.js" />
     <Content Include="app\Controllers\PhoneController.js" />
-    <Content Include="app\main.js" />
     <Content Include="app\router.js" />
     <Content Include="app\Services\PhoneService.js" />
     <Content Include="app\Views\footer.html" />
