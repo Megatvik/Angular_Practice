@@ -10,6 +10,23 @@ function phoneController(PhoneService) {
     vm.sortReverse = false;
     vm.searshName = '';
     vm.showAddForm = false;
+    vm.showEditBtn = false;
+    vm.currentItem = {};
+
+    vm.EnableEdit = function (item) {
+        vm.showEditBtn = true;
+        vm.showAddForm = true;
+        vm.currentItem.Id = item.Id;
+        vm.currentItem.Name = item.Name;
+        vm.currentItem.Brand = item.Brand;
+        vm.currentItem.ReleaseYear = item.ReleaseYear;
+    };
+
+    vm.EnableAdd = function () {
+        vm.showAddForm = true;
+        vm.showEditBtn = false;
+        vm.currentItem = {};
+    };
 
     vm.Get = function () {
         PhoneService.GetPhones().then(function (data) { vm.data = data });
@@ -21,6 +38,10 @@ function phoneController(PhoneService) {
 
     vm.Delete = function (item) {
         PhoneService.DelPhone(item).then(function (responce) { vm.data.splice(vm.data.indexOf(item), 1); });
+    };
+
+    vm.Edit = function (item) {
+        PhoneService.EditPhone(item).then(function (responce) { vm.Get(); });
     };
 
     vm.Get();

@@ -66,7 +66,7 @@ namespace ADObase
             return phone;
         }
 
-        public static void UpdatePhone(Phone phone, int id)
+        public static void UpdatePhone(Phone phone)
         {
             using (SqlConnection cn = new SqlConnection())
             {
@@ -80,7 +80,7 @@ namespace ADObase
                                          ,[ReleaseYear] = @year
                                       WHERE [Id] = @id";
                     SqlCommand myCommand = new SqlCommand(strSQL, cn);
-                    myCommand.Parameters.AddWithValue("@id", id);
+                    myCommand.Parameters.AddWithValue("@id", phone.Id);
                     myCommand.Parameters.AddWithValue("@name", phone.Name);
                     myCommand.Parameters.AddWithValue("@brand", phone.Brand);
                     myCommand.Parameters.AddWithValue("@year", phone.ReleaseYear);

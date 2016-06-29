@@ -43,10 +43,10 @@ namespace PhoneCatalog.Controllers
             PhoneRepository.AddPhone(value);
         }
 
-        // PUT: api/Phone/5
-        public void Put(int id, [FromBody]Phone value)
+        // PUT: api/Phone
+        public void Put([FromBody]Phone value)
         {
-            PhoneRepository.UpdatePhone(value, id);
+            PhoneRepository.UpdatePhone(value);
         }
 
         // DELETE: api/Phone/5

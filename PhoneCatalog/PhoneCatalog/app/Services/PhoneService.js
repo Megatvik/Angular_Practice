@@ -31,4 +31,12 @@ function PhoneService($http) {
         return promise;
     };
 
+    this.EditPhone = function (phone) {
+        // HTTP POST
+        // отправка POST запроса для изменения существующей записи на сервере
+        var promise = $http.put("api/Phone/", phone).then(function () {
+
+        });
+        return promise;
+    };
 };
