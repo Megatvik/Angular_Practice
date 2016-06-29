@@ -1,12 +1,12 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+body {
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -16,3 +16,11 @@ textarea {
     max-width: 280px;
 }
 
+.col-md-3{
+    border:solid 2px;
+    padding:10px;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove{
+    transition: 1s linear all;
+}

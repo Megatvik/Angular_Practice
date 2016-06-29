@@ -1,27 +1,38 @@
 ﻿
-<div style="text-align:center; padding:20px; border-top:5px solid;" ng-controller="Main as vm">
-    <input style="text-align:center;" type="text" ng-model="vm.text" placeholder="Enter text" />
+<div>
+    <!--<div style="text-align:center; padding:20px; border-top:5px solid;">-->
+    <div id="addNewItem" class="row animate-show" ng-show="phone.showNewForm">
+        <div class="col-md-3 text-center">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" ng-model="currentItem.Name" />
+            </div>
 
-    <p>{{vm.text}}</p>
+            <div class="form-group">
+                <label for="brand">Brand</label>
+                <input type="text" class="form-control" id="brand" ng-model="currentItem.Brand" />
+            </div>
 
-    <div style="display:inline-block;">
-        <div style="display:inline;">
-            <label>Name</label>
-            <input ng-model="currentItem.Name" />
-        </div>
-
-        <div style="display:inline;">
-            <label>Brand</label>
-            <input ng-model="currentItem.Brand" />
-        </div>
-
-        <div style="display:inline;">
-            <label>Release</label>
-            <input ng-model="currentItem.ReleaseYear" />
-        </div>
-        <div style="display:inline;">
-            <button ng-click="phone.create(currentItem)">Save</button>
+            <div class="form-group">
+                <label for="release">Release</label>
+                <input type="text" class="form-control" id="release" ng-model="currentItem.ReleaseYear" />
+            </div>
+            <div>
+                <span class="navbar-btn">
+                    <button class="btn btn-primary btn-lg" ng-click="phone.create(currentItem)">Add new item</button>
+                </span>
+            </div>
         </div>
     </div>
+    <div class="row">
 
+        <div class="col-md-3 text-center">
+            <a href="#" ng-click="phone.showNewForm = !phone.showNewForm">Add new item</a>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-3 col-md-offset-9">
+            <label for="search">Search Name:</label>
+            <input id="search" class="form-control" type="text" placeholder="Input name" ng-model="phone.searchName" />
+        </div>
+    </div>
 </div>

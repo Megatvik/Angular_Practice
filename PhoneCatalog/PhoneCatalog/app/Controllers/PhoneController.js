@@ -6,14 +6,16 @@ angular
 
 function phoneController($http) {
     var vm = this
-    vm.message = "Hold on"
 
+    vm.sortType = 'Name';
+    vm.sortReverse = false;
+    vm.searshName = '';
+    vm.showNewForm = false;
     vm.refresh = function () {
         // HTTP GET
         // получение всех данных через GET запрос
         $http.get("api/Phone/").then(function (responce) {
             vm.data = responce.data
-            vm.message = "Ok"
         },
     function (error) {
         vm.message = "Error!"

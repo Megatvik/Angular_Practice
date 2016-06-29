@@ -132,7 +132,9 @@
     <Content Include="app\Controllers\getList.js" />
     <Content Include="app\Controllers\PhoneController.js" />
     <Content Include="app\main.js" />
+    <Content Include="app\myJQuery.js" />
     <Content Include="app\router.js" />
+    <Content Include="app\Services\filer.js" />
     <Content Include="app\Views\footer.html" />
     <Content Include="app\Views\header.html" />
     <Content Include="app\Views\menu.html" />

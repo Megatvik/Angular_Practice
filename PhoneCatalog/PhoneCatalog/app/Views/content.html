@@ -1,20 +1,36 @@
 ﻿
+<div class="text-center">
+<!--<div style="text-align:center; margin-left:20%; margin-right:20%; padding:20px; border-top:5px solid;">-->
+    <!--ng-controller="PhoneController as phone">-->
 
-<div style="text-align:center; margin-left:20%; margin-right:20%; padding:20px; border-top:5px solid;"> <!--ng-controller="PhoneController as phone">-->
-
-    <p>{{phone.message}}</p>
     <table width="100%">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Brand</th>
-                <th>Release Year</th>
+                <th>
+                    <a href="#" ng-click="phone.sortType = 'Id'; phone.sortReverse = !phone.sortReverse">
+                        Id
+                    </a>
+                </th>
+                <th>
+                    <a href="#" ng-click="phone.sortType = 'Name'; phone.sortReverse = !phone.sortReverse">
+                        Name
+                    </a>
+                </th>
+                <th>
+                    <a href="#" ng-click="phone.sortType = 'Brand'; phone.sortReverse = !phone.sortReverse">
+                        Brand
+                    </a>
+                </th>
+                <th>
+                    <a href="#" ng-click="phone.sortType = 'ReleaseYear'; phone.sortReverse = !phone.sortReverse">
+                        Release Year
+                    </a>
+                </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr align="center" ng-repeat="item in phone.data">
+            <tr align="center" ng-repeat="item in phone.data | orderBy:phone.sortType:phone.sortReverse | filter: phone.searchName">
                 <td>{{item.Id}}</td>
                 <td>{{item.Name}}</td>
                 <td>{{item.Brand}}</td>
