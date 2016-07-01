@@ -1,6 +1,6 @@
 ﻿/* Set padding to keep content from hitting the edges */
-body {
-    padding-left: 20px;
+.content {
+    padding-left: 30px;
     padding-right: 50px;
 }
 
@@ -11,7 +11,15 @@ textarea {
     max-width: 280px;
 }
 
-#mainMenu{
-    right:20px;
+#mainMenu {
+    right: 20px;
+    padding:10px;
+    background-color:lightgray;
+}
 
+li.thumbnail {
+    text-align: center;
+    padding: 10px;
+    padding-bottom:40px;
+    margin-bottom: 20px;
 }

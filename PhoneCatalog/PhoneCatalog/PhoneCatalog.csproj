@@ -135,9 +135,6 @@
     <Content Include="app\router.js" />
     <Content Include="app\Services\PhoneService.js" />
     <Content Include="app\Views\addNew.html" />
-    <Content Include="app\Views\footer.html" />
-    <Content Include="app\Views\header.html" />
-    <Content Include="app\Views\menu.html" />
     <Content Include="app\Views\newMenu.html" />
     <Content Include="App_Data\Phone.mdf" />
     <Content Include="App_Data\Phone_log.ldf" />

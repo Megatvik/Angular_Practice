@@ -1,23 +1,25 @@
 ﻿<div class="row">
     <div class="col-md-9">
 
-        <ul style="list-style:none;">
-            <li style="text-align:center; padding-bottom:30px; margin-bottom:20px;" class="thumbnail" align="center" ng-repeat="item in phone.data | orderBy:phone.sortType:phone.sortReverse | filter: phone.searchName">
-                <p>
-                    Name: {{item.Name}}
-                </p>
-                <p>
-                    Brand: {{item.Brand}}
-                </p>
-                <p>
-                    Release: {{item.ReleaseYear}}
-                </p>
-                <p style="float:right;">
-                    <span>
-                        <button class="btn" ng-click="phone.enableEdit(item)">Edit</button>
-                        <button class="btn" ng-click="phone.deletePhone(item)">Delete</button>
-                    </span>
-                </p>
+        <ul class="list-unstyled">
+            <li class="thumbnail" ng-repeat="item in phone.data | orderBy:phone.sortType:phone.sortReverse | filter: phone.searchName">
+                <div>
+                    <p>
+                        Name: {{item.Name}}
+                    </p>
+                    <p>
+                        Brand: {{item.Brand}}
+                    </p>
+                    <p>
+                        Release: {{item.ReleaseYear}}
+                    </p>
+                </div>
+                <div class="pull-right">
+                        <span>
+                            <button class="btn" ng-click="phone.enableEdit(item)">Edit</button>
+                            <button class="btn" ng-click="phone.deletePhone(item)">Delete</button>
+                        </span>
+                </div>
             </li>
         </ul>
     </div>
