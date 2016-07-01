@@ -1,47 +1,25 @@
 ﻿<div class="row">
-    <!--<div ng-class=" { 'col-md-9 text-center' : phone.showAddForm, 'col-md-9 text-center' : !phone.showAddForm }">-->
     <div class="col-md-9">
-        <table width="100%">
-            <thead>
-                <tr>
-                    <th>
-                        <a href="#" ng-click="phone.sortType = 'Id'; phone.sortReverse = !phone.sortReverse">
-                            Id
-                        </a>
-                    </th>
-                    <th>
-                        <a href="#" ng-click="phone.sortType = 'Name'; phone.sortReverse = !phone.sortReverse">
-                            Name
-                        </a>
-                    </th>
-                    <th>
-                        <a href="#" ng-click="phone.sortType = 'Brand'; phone.sortReverse = !phone.sortReverse">
-                            Brand
-                        </a>
-                    </th>
-                    <th>
-                        <a href="#" ng-click="phone.sortType = 'ReleaseYear'; phone.sortReverse = !phone.sortReverse">
-                            Release Year
-                        </a>
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr align="center" ng-repeat="item in phone.data | orderBy:phone.sortType:phone.sortReverse | filter: phone.searchName">
-                    <td>{{item.Id}}</td>
-                    <td>{{item.Name}}</td>
-                    <td>{{item.Brand}}</td>
-                    <td>{{item.ReleaseYear}}</td>
-                    <td>
-                        <button ng-click="phone.enableEdit(item)">Edit</button>
-                        <button ng-click="phone.deletePhone(item)">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+        <ul style="list-style:none;">
+            <li style="text-align:center; padding-bottom:30px; margin-bottom:20px;" class="thumbnail" align="center" ng-repeat="item in phone.data | orderBy:phone.sortType:phone.sortReverse | filter: phone.searchName">
+                <p>
+                    Name: {{item.Name}}
+                </p>
+                <p>
+                    Brand: {{item.Brand}}
+                </p>
+                <p>
+                    Release: {{item.ReleaseYear}}
+                </p>
+                <p style="float:right;">
+                    <span>
+                        <button class="btn" ng-click="phone.enableEdit(item)">Edit</button>
+                        <button class="btn" ng-click="phone.deletePhone(item)">Delete</button>
+                    </span>
+                </p>
+            </li>
+        </ul>
     </div>
-
-    <add-new></add-new>
-
+    
 </div>
