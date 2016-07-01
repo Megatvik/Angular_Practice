@@ -138,6 +138,7 @@
     <Content Include="app\Views\footer.html" />
     <Content Include="app\Views\header.html" />
     <Content Include="app\Views\menu.html" />
+    <Content Include="app\Views\newMenu.html" />
     <Content Include="App_Data\Phone.mdf" />
     <Content Include="App_Data\Phone_log.ldf" />
     <Content Include="Content\bootstrap.css" />
