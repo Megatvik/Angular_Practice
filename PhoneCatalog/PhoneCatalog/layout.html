@@ -11,19 +11,29 @@
     <script src="app/router.js"></script>
     <script src="app/Services/PhoneService.js"></script>
     <script src="app/Controllers/PhoneController.js"></script>
+    <script src="app/Directives/mainMenu.js"></script>
+    <script src="app/Directives/mainContent.js"></script>
+    <script src="app/Directives/addNew.js"></script>
 
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
 
 </head>
 <body ng-controller="PhoneController as phone">
-    <div>
-        <div>
-            <div ui-view='header'></div>
-            <div ui-view='menu'></div>
-            <div ui-view='content'></div>
-            <div ui-view='footer'></div>
+
+    <header>
+        <div class="text-center">
+            <div>
+                <h1>Phone catalog</h1>
+            </div>
         </div>
-    </div>
+    </header>
+
+            <main-menu></main-menu>
+            <main-content></main-content>
+
+    <footer>
+
+    </footer>
 </body>
 </html>
