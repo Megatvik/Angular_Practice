@@ -4,36 +4,28 @@
 
 function PhoneService($http) {
 
-    this.GetPhones = function () {
-        // HTTP GET
-        // получение всех данных через GET запрос
+    this.getPhones = function () {
         var promise = $http.get("api/Phone/").then(function (responce) {
             return responce.data;
         });
         return promise;
     };
 
-    this.PostPhone = function (phone) {
-        // HTTP POST
-        // Отправка POST запроса для создания новой записи на сервере
+    this.postPhone = function (phone) {
         var promise = $http.post("api/Phone/", phone).then(function (phone) {
             return phone.data;
         });
         return promise;
     };
 
-    this.DelPhone = function (phone) {
-        // HTTP DELETE
-        // отправка DELETE запроса по адресу 
+    this.delPhone = function (phone) {
         var promise = $http.delete("api/Phone/" + phone.Id).then(function () {
 
         });
         return promise;
     };
 
-    this.EditPhone = function (phone) {
-        // HTTP POST
-        // отправка POST запроса для изменения существующей записи на сервере
+    this.editPhone = function (phone) {
         var promise = $http.put("api/Phone/", phone).then(function () {
 
         });

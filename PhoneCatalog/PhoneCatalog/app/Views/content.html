@@ -13,8 +13,8 @@
             <input type="text" class="form-control" id="release" ng-model="phone.currentItem.ReleaseYear" />
         </div>
         <div>
-            <button class="btn btn-primary btn-lg" ng-show="!phone.showEditBtn" ng-click="phone.Post(phone.currentItem)">Add new item</button>
-            <button class="btn btn-primary btn-lg" ng-show="phone.showEditBtn" ng-click="phone.Edit(phone.currentItem)">Edit selected</button>
+            <button class="btn btn-primary btn-lg" ng-show="!phone.showEditBtn" ng-click="phone.addNewPhone(phone.currentItem); phone.enableAdd();">Add new item</button>
+            <button class="btn btn-primary btn-lg" ng-show="phone.showEditBtn" ng-click="phone.editPhone(phone.currentItem)">Edit selected</button>
             <button class="btn btn-danger btn-sm" ng-click="phone.showAddForm = false">Close</button>
         </div>
     </div>
@@ -53,8 +53,8 @@
                     <td>{{item.Brand}}</td>
                     <td>{{item.ReleaseYear}}</td>
                     <td>
-                        <button ng-click="phone.EnableEdit(item)">Edit</button>
-                        <button ng-click="phone.Delete(item)">Delete</button>
+                        <button ng-click="phone.enableEdit(item)">Edit</button>
+                        <button ng-click="phone.deletePhone(item)">Delete</button>
                     </td>
                 </tr>
             </tbody>
