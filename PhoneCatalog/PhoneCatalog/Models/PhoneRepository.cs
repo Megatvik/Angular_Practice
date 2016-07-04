@@ -12,6 +12,15 @@ namespace ADObase
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["PhoneCatalog"].ConnectionString;
 
+        private static T getElement<T> ( object item )
+        {
+            if (item == DBNull.Value) return default(T);
+            return (T)item;
+        }
+
+           
+            
+
         public static List<Phone> GetAllPhones()
         {
             List<Phone> phones = new List<Phone>();
@@ -32,6 +41,8 @@ namespace ADObase
                         phone.Name = (string)dr[1];
                         phone.Brand = (string)dr[2];
                         phone.ReleaseYear = (int)dr[3];
+                        phone.Description = getElement<string>(dr[4]);
+                        phone.Image = getElement<string>(dr[5]);
                         phones.Add(phone);
                     }
                 }
@@ -59,6 +70,8 @@ namespace ADObase
                         phone.Name = (string)dr[1];
                         phone.Brand = (string)dr[2];
                         phone.ReleaseYear = (int)dr[3];
+                        phone.Description = getElement<string>(dr[4]);
+                        phone.Image = getElement<string>(dr[5]);
                     }
                 }
                 catch (SqlException error) { phone = new Phone { Name = error.Message }; }
@@ -78,12 +91,30 @@ namespace ADObase
                                       SET [Name] = @name
                                          ,[Brand] = @brand
                                          ,[ReleaseYear] = @year
+                                         ,[Description] = @desc
+                                         ,[Image] = @img
                                       WHERE [Id] = @id";
                     SqlCommand myCommand = new SqlCommand(strSQL, cn);
                     myCommand.Parameters.AddWithValue("@id", phone.Id);
                     myCommand.Parameters.AddWithValue("@name", phone.Name);
                     myCommand.Parameters.AddWithValue("@brand", phone.Brand);
                     myCommand.Parameters.AddWithValue("@year", phone.ReleaseYear);
+                    if (phone.Description == null)
+                    {
+                        myCommand.Parameters.AddWithValue("@desc", DBNull.Value);
+                    }
+                    else
+                    {
+                        myCommand.Parameters.AddWithValue("@desc", phone.Description);
+                    }
+                    if (phone.Image == null)
+                    {
+                        myCommand.Parameters.AddWithValue("@img", DBNull.Value);
+                    }
+                    else
+                    {
+                        myCommand.Parameters.AddWithValue("@img", phone.Image);
+                    }
                     myCommand.ExecuteNonQuery();
                 }
                 catch (SqlException error) { }
@@ -98,13 +129,29 @@ namespace ADObase
                 try
                 {
                     cn.Open();
-                    string strSQL = @"INSERT INTO Phone (Name, Brand, ReleaseYear) 
-                                      VALUES (@name,@brand,@year)";
+                    string strSQL = @"INSERT INTO Phone (Name, Brand, ReleaseYear, Description, Image) 
+                                      VALUES (@name,@brand,@year,@desc,@img)";
                     SqlCommand myCommand = new SqlCommand(strSQL, cn);
                     //myCommand.Parameters.AddWithValue("@id", phone.Id);
                     myCommand.Parameters.AddWithValue("@name", phone.Name);
                     myCommand.Parameters.AddWithValue("@brand", phone.Brand);
                     myCommand.Parameters.AddWithValue("@year", phone.ReleaseYear);
+                    if (phone.Description == null)
+                    {
+                        myCommand.Parameters.AddWithValue("@desc", DBNull.Value);
+                    }
+                    else
+                    {
+                        myCommand.Parameters.AddWithValue("@desc", phone.Description);
+                    }
+                    if (phone.Image == null)
+                    {
+                        myCommand.Parameters.AddWithValue("@img", DBNull.Value);
+                    }
+                    else
+                    {
+                        myCommand.Parameters.AddWithValue("@img", phone.Image);
+                    }
                     myCommand.ExecuteNonQuery();
                 }
                 catch (SqlException error) { }

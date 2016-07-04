@@ -12,5 +12,7 @@ namespace ADObase
         public string Name { get; set; }
         public string Brand { get; set; }
         public int ReleaseYear { get; set; }
+        public string Description { get; set; }
+        public string Image { get; set; }
     }
 }

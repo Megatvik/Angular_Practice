@@ -20,6 +20,8 @@ function phoneController(PhoneService) {
         vm.currentItem.Name = item.Name;
         vm.currentItem.Brand = item.Brand;
         vm.currentItem.ReleaseYear = item.ReleaseYear;
+        vm.currentItem.Description = item.Description;
+        vm.currentItem.Image = item.Image;
     };
 
     vm.enableAdd = function () {
