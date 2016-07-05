@@ -254,3 +254,5 @@ paket-files/
 # Scripts
 
 Scripts/
+public/
+bower_components/

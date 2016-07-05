@@ -1,0 +1,24 @@
+{
+  "name": "PhoneList",
+  "preferGlobal": true,
+  "version": "0.1.0",
+  "author": "Matvik",
+  "description": "A sample phone list application",
+  "bin": {
+    "package-name": "./app/"
+  },
+  "dependencies": {
+  },
+  "analyze": false,
+  "devDependencies": {
+    "grunt": ">= 0.4.5",
+    "grunt-bowercopy": "",
+    "grunt-contrib-copy": "",
+    "grunt-contrib-concat": "",
+    "grunt-contrib-clean": ""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  }
+}
