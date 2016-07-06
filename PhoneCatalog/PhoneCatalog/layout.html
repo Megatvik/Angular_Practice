@@ -15,10 +15,11 @@
     <script src="app/Directives/mainMenu.js"></script>
     <script src="app/Directives/mainContent.js"></script>
     <script src="app/Directives/addNew.js"></script>
-
+    
     <!--<script src="public/dist/phoneCombined.js"></script>-->
     <link href="public/dist/bootstrap.css" rel="stylesheet"/>
-    <link href="public/dist/Site.css" rel="stylesheet"/>
+    <!--<link href="public/dist/Site.css" rel="stylesheet"/>-->
+    <link href="Content/Site.css" rel="stylesheet" />
 
 </head>
 <body ng-controller="viewController as view">
@@ -28,9 +29,6 @@
             <a ui-sref="default" ng-click="view.default = true; view.client = false; view.admin = false;">default</a>    |
             <a ui-sref="client" ng-click="view.default = false; view.client = true; view.admin = false;">client</a>  |
             <a ui-sref="admin" ng-click="view.default = false; view.client = false; view.admin = true;">admin</a>
-            <div>
-                {{view.default}} | {{view.client}} | {{view.admin}}
-            </div>
         </div>
     </header>
 
