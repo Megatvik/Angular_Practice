@@ -7,32 +7,35 @@
 
     <script src="Scripts/angular.js" type="text/javascript"></script>
     <script src="Scripts/angular-ui-router.js" type="text/javascript"></script>
-    <!--<script src="app/app.module.js"></script>
+    <script src="app/app.module.js"></script>
     <script src="app/router.js"></script>
     <script src="app/Services/PhoneService.js"></script>
     <script src="app/Controllers/PhoneController.js"></script>
+    <script src="app/Controllers/viewController.js"></script>
     <script src="app/Directives/mainMenu.js"></script>
     <script src="app/Directives/mainContent.js"></script>
     <script src="app/Directives/addNew.js"></script>
 
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-    <link href="Content/Site.css" rel="stylesheet" />-->
-
-    <script src="public/dist/phoneCombined.js"></script>
+    <!--<script src="public/dist/phoneCombined.js"></script>-->
     <link href="public/dist/bootstrap.css" rel="stylesheet"/>
     <link href="public/dist/Site.css" rel="stylesheet"/>
 
 </head>
-<body ng-controller="PhoneController as phone">
+<body ng-controller="viewController as view">
     <header>
         <div class="text-center page-header">
                 <h1>Phone catalog</h1>
+            <a ui-sref="default" ng-click="view.default = true; view.client = false; view.admin = false;">default</a>    |
+            <a ui-sref="client" ng-click="view.default = false; view.client = true; view.admin = false;">client</a>  |
+            <a ui-sref="admin" ng-click="view.default = false; view.client = false; view.admin = true;">admin</a>
+            <div>
+                {{view.default}} | {{view.client}} | {{view.admin}}
+            </div>
         </div>
     </header>
 
-    <div class="content">
-        <main-menu></main-menu>
-        <main-content></main-content>
+    <div class="content" ng-controller="PhoneController as phone">
+        <div ui-view="default"></div>
     </div>
 
     <footer class="panel-footer">

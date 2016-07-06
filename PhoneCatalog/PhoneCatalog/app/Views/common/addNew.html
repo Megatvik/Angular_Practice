@@ -1,4 +1,4 @@
-﻿<div id="addNew" ng-show="phone.showAddForm">
+﻿<div id="addNew" ng-show="phone.showAddForm && view.admin">
     <hr />
     <div class="form-group">
         <label for="name">Name</label>
@@ -18,7 +18,6 @@
     </div>
     <div>
         <label for="img">Image</label>
-        <!--<input type="file" name="file" class="form-group" id="img" onchange="angular.element(this).scope().uploadFile(this.files)"/>-->
     </div>
     <div>
         <button class="btn btn-primary btn-lg" ng-show="!phone.showEditBtn" ng-click="phone.addNewPhone(phone.currentItem); phone.enableAdd();">Add new item</button>

@@ -14,6 +14,6 @@ function addNew() {
 
         },
 
-        templateUrl: 'app/Views/addNew.html'
+        templateUrl: 'app/Views/common/addNew.html'
     };
 };

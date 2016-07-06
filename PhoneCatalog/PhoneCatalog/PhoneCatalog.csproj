@@ -129,13 +129,17 @@
   <ItemGroup>
     <Content Include="app\app.module.js" />
     <Content Include="app\Controllers\PhoneController.js" />
+    <Content Include="app\Controllers\viewController.js" />
     <Content Include="app\Directives\addNew.js" />
     <Content Include="app\Directives\mainContent.js" />
     <Content Include="app\Directives\mainMenu.js" />
     <Content Include="app\router.js" />
     <Content Include="app\Services\PhoneService.js" />
-    <Content Include="app\Views\addNew.html" />
-    <Content Include="app\Views\newMenu.html" />
+    <Content Include="app\Views\admin.html" />
+    <Content Include="app\Views\client.html" />
+    <Content Include="app\Views\common\addNew.html" />
+    <Content Include="app\Views\common\newMenu.html" />
+    <Content Include="app\Views\default.html" />
     <Content Include="App_Data\Phone.mdf" />
     <Content Include="App_Data\Phone_log.ldf" />
     <Content Include="Content\bootstrap.css" />
@@ -143,7 +147,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="app\Views\content.html" />
+    <Content Include="app\Views\common\content.html" />
     <Content Include="Gruntfile.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-ui-router.js" />
@@ -189,13 +193,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BusinessOperations\BusinessOperations.csproj">
-      <Project>{eec068bf-4ede-4b7e-99c7-2ac4558fab39}</Project>
-      <Name>BusinessOperations</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Contracts\Contracts.csproj">
       <Project>{0da0935e-33c8-4137-822f-f7fb94871572}</Project>
       <Name>Contracts</Name>

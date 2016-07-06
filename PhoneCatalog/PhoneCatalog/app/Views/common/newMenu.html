@@ -1,7 +1,7 @@
 ﻿<div id="mainMenu" class="affix col-md-3 col-lg-offset-9">
     <!-- Main buttons -->
 
-    <button class="btn" ng-class="{'btn-warning':!phone.showAddForm, 'btn-success':phone.showAddForm}" ng-click="phone.enableAdd();">Add new item</button>
+    <button class="btn" ng-show="view.admin" ng-class="{'btn-warning':!phone.showAddForm, 'btn-success':phone.showAddForm}" ng-click="phone.enableAdd();">Add item</button>
     <button class="btn" ng-class="{'btn-warning':phone.showAddForm, 'btn-success':!phone.showAddForm}" ng-click="phone.showAddForm = false;">Filter</button>
     
     <!-- Filter menu hide/show -->

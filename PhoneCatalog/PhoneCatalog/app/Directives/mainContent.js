@@ -14,6 +14,6 @@ function mainContent() {
 
         },
 
-        templateUrl: 'app/Views/content.html'
+        templateUrl: 'app/Views/common/content.html'
     };
 };
