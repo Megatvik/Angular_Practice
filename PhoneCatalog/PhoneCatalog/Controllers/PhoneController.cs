@@ -7,21 +7,19 @@ using System.Web.Http;
 using System.Data.SqlClient;
 using System.Configuration;
 using ADObase;
+using DataAccess;
 
 namespace PhoneCatalog.Controllers
 {
     public class PhoneController : ApiController
     {
+        PhoneRepository repo = new PhoneRepository(ConfigurationManager.ConnectionStrings["PhoneCatalog"].ConnectionString);
+
         // GET: api/Phone
         public IEnumerable<Phone> Get()
         {
             List<Phone> phones = new List<Phone>();
-            try
-            {
-                phones = PhoneRepository.GetAllPhones();
-
-            }
-            catch (Exception err) { phones.Add(new Phone { Name = err.Message }); }
+            phones = repo.GetPhones();
             return phones;
         }
 
@@ -29,30 +27,26 @@ namespace PhoneCatalog.Controllers
         public Phone Get(int id)
         {
             Phone phone = new Phone();
-            try
-            {
-                phone = PhoneRepository.GetPhone(id);
-            }
-            catch (Exception err) { phone = new Phone { Name = err.Message }; }
+            phone = repo.GetPhone(id);
             return phone;
         }
 
         // POST: api/Phone
         public void Post([FromBody]Phone value)
         {
-            PhoneRepository.AddPhone(value);
+            repo.AddPhone(value);
         }
 
         // PUT: api/Phone
         public void Put([FromBody]Phone value)
         {
-            PhoneRepository.UpdatePhone(value);
+            repo.UpdatePhone(value);
         }
 
         // DELETE: api/Phone/5
         public void Delete(int id)
         {
-            PhoneRepository.DeletePhone(id);
+            repo.DeletePhone(id);
         }
     }
 }
