@@ -2,40 +2,25 @@
 
 angular
     .module('app')
-    .controller('PhoneController', phoneController);
+    .controller('phoneController', phoneController);
 
 function phoneController(PhoneService) {
     var vm = this;
     vm.sortType = 'Name';
     vm.sortReverse = false;
     vm.searshName = '';
-    vm.showAddForm = false;
-    vm.showEditBtn = false;
-    vm.currentItem = {};
-
-    vm.enableEdit = function (item) {
-        vm.showEditBtn = true;
-        vm.showAddForm = true;
-        vm.currentItem.Id = item.Id;
-        vm.currentItem.Name = item.Name;
-        vm.currentItem.Brand = item.Brand;
-        vm.currentItem.ReleaseYear = item.ReleaseYear;
-        vm.currentItem.Description = item.Description;
-        vm.currentItem.Image = item.Image;
-    };
-
-    vm.enableAdd = function () {
-        vm.showAddForm = true;
-        vm.showEditBtn = false;
-        vm.currentItem = {};
-    };
+    vm.isLoading = true;
 
     vm.getPhones = function () {
+        vm.isLoading = true;
         PhoneService.getPhones().then(function (data) { vm.data = data });
+        vm.isLoading = false;
     };
 
     vm.addNewPhone = function (item) {
+        vm.isLoading = true;
         PhoneService.postPhone(item).then(function (phone) { vm.getPhones(); });
+        vm.isLoading = false;
     };
 
     vm.deletePhone = function (item) {
@@ -43,8 +28,9 @@ function phoneController(PhoneService) {
     };
 
     vm.editPhone = function (item) {
+        vm.isLoading = true;
         PhoneService.editPhone(item).then(function (responce) { vm.getPhones(); });
+        vm.isLoading = false;
     };
-
     vm.getPhones();
 }

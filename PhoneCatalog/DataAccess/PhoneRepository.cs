@@ -31,6 +31,7 @@ namespace DataAccess
         const string sqlDelete = @"DELETE FROM Phone WHERE Id = @id";
 
         #endregion
+        private static PhoneRepository repo;
 
         private string connectionString;
 
@@ -169,6 +170,15 @@ namespace DataAccess
                 myCommand.Parameters.AddWithValue("@id", id);
                 myCommand.ExecuteNonQuery();
             }
+        }
+
+        public static PhoneRepository GetRepo(string connectionString)
+        {
+            if (repo == null)
+            {
+                repo = new PhoneRepository(connectionString);
+            }
+            return new PhoneRepository(connectionString);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace PhoneCatalog.Controllers
 {
     public class PhoneController : ApiController
     {
-        PhoneRepository repo = new PhoneRepository(ConfigurationManager.ConnectionStrings["PhoneCatalog"].ConnectionString);
+        PhoneRepository repo =  PhoneRepository.GetRepo((ConfigurationManager.ConnectionStrings["PhoneCatalog"].ConnectionString));
 
         // GET: api/Phone
         public IEnumerable<Phone> Get()
