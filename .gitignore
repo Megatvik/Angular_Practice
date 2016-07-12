@@ -251,8 +251,4 @@ paket-files/
 .idea/
 *.sln.iml
 
-# Scripts
-
-Scripts/
-public/
 bower_components/

@@ -12,10 +12,12 @@
   "analyze": false,
   "devDependencies": {
     "grunt": ">= 0.4.5",
+    "angular-confirm": "^1.2.5",
     "grunt-bowercopy": "",
     "grunt-contrib-copy": "",
     "grunt-contrib-concat": "",
-    "grunt-contrib-clean": ""
+    "grunt-contrib-clean": "",
+    "angular-ui-bootstrap": "0.14.3"
   },
   "license": "MIT",
   "engines": {

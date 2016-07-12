@@ -1,0 +1,25 @@
+﻿/* Set padding to keep content from hitting the edges */
+.content {
+    padding-left: 30px;
+    padding-right: 50px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#mainMenu {
+    right: 20px;
+    padding:10px;
+    background-color:lightgray;
+}
+
+li.thumbnail {
+    text-align: center;
+    padding: 10px;
+    padding-bottom:40px;
+    margin-bottom: 20px;
+}

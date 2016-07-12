@@ -5,6 +5,7 @@
     "bootstrap": "*",
     "jquery-validation-unobtrusive": "*",
     "modernizr": "*",
-    "respond": "*"
+    "respond": "*",
+    "angular-confirm-modal": "*"
   }
 }
