@@ -9,7 +9,7 @@ using ADObase;
 
 namespace DataAccess
 {
-    public class PhoneRepository
+    public class PhoneRepository : IRepository
     {
 
         #region SQL Statements
@@ -33,12 +33,12 @@ namespace DataAccess
         #endregion
         private static PhoneRepository repo;
 
-        private string connectionString;
-
-        public PhoneRepository(string connectionString)
-        {
-            this.connectionString = connectionString;
-        }
+        //public string connectionString;
+        public string connectionString { get; set; }
+        //public PhoneRepository(string connectionString)
+        //{
+        //    this.connectionString = connectionString;
+        //}
 
         private T getElement<T>(object item)
         {
@@ -172,13 +172,13 @@ namespace DataAccess
             }
         }
 
-        public static PhoneRepository GetRepo(string connectionString)
-        {
-            if (repo == null)
-            {
-                repo = new PhoneRepository(connectionString);
-            }
-            return new PhoneRepository(connectionString);
-        }
+        //public static PhoneRepository GetRepo(string connectionString)
+        //{
+        //    if (repo == null)
+        //    {
+        //        repo = new PhoneRepository(connectionString);
+        //    }
+        //    return new PhoneRepository(connectionString);
+        //}
     }
 }

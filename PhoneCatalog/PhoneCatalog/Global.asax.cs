@@ -1,8 +1,12 @@
-﻿using System;
+﻿using DataAccess;
+using Microsoft.Practices.Unity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using System.Web.Mvc;
+using Unity.WebApi;
 
 namespace PhoneCatalog
 {
@@ -10,6 +14,8 @@ namespace PhoneCatalog
     {
         protected void Application_Start()
         {
+
+            UnityConfig.RegisterComponents();
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
