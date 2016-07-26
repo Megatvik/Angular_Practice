@@ -1,0 +1,16 @@
+﻿
+<div ng-controller="userController as user" class="userForm">
+    <div ng-hide="user.isLogin" class="col-md-5 col-md-offset-7">
+
+        <input ng-model="user.data.login" type="text" placeholder="Name" />
+        <input ng-model="user.data.pass" type="password" placeholder="Password" />
+        <button ng-click="user.login(user.data)">Login</button>
+        <a>Register</a>
+
+    </div>
+
+    <div ng-show="user.isLogin" class="col-md-3 col-md-offset-9">
+        Hello {{user.data.login}}!
+        <button ng-click="user.exit()">Exit</button>
+    </div>
+</div>

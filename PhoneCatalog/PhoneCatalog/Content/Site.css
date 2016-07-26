@@ -37,3 +37,7 @@ li.thumbnail {
     margin-bottom: 20px;
     box-shadow: lightgray 10px 10px;
 }
+
+.userForm {
+    padding-top:10px;
+}

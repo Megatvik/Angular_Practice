@@ -15,9 +15,11 @@
     <script src="app/Services/PhoneService.js"></script>
     <script src="app/Controllers/phoneController.js"></script>
     <script src="app/Controllers/viewController.js"></script>
+    <script src="app/Controllers/userController.js"></script>
     <script src="app/Directives/mainMenu.js"></script>
     <script src="app/Directives/mainContent.js"></script>
     <script src="app/Directives/addNew.js"></script>
+    <script src="app/Directives/userControl.js"></script>
     <script src="Scripts/angular-confirm.js"></script>
 
     
@@ -30,6 +32,7 @@
 <body ng-controller="viewController as view">
     <header>
         <div class="text-center page-header">
+            <user-Control></user-Control>
                 <h1>Phone catalog</h1>
             <a ui-sref="default" ng-click="view.default = true; view.client = false; view.admin = false;">default</a>    |
             <a ui-sref="client" ng-click="view.default = false; view.client = true; view.admin = false;">client</a>  |
